@@ -1,19 +1,19 @@
-import { getHandlers } from './requestHandlers/get';
+import { getHandler } from './requestHandlers/getHandler';
 
-export const requestHandlers = {
-  get: function () {
+export const requestRouting = {
+  get: function (req, res) {
+    getHandler(req, res);
+  },
+
+  post: function (req, res) {
 
   },
 
-  post: function () {
-
-  },
-
-  put: function () {
+  put: function (req, res) {
 
   },
   
-  delete: function () {
+  delete: function (req, res) {
 
   },
 };

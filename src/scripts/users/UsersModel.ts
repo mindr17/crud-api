@@ -1,5 +1,5 @@
+import { IUser } from '../interfaces';
 import { getUsers } from './usersStartDb';
-import '../interfaces';
 
 class UsersModel {
   private _users: Array<IUser>;
@@ -12,8 +12,8 @@ class UsersModel {
     return this._users;
   }
 
-  // public get users() {
-  //   return this._users;
+  // public set users(usersArg) {
+  //   this._users = usersArg;
   // }
 }
 

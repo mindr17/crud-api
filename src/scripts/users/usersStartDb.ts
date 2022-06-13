@@ -1,4 +1,6 @@
-const usersArr = [
+import { IUser } from '../interfaces';
+
+const usersArr: Array<IUser> = [
   {
     "id": 0,
     "username": "Bob",

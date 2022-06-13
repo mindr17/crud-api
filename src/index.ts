@@ -1,6 +1,6 @@
 import { startServer } from './scripts/httpServer/httpServer';
 
-const main = () => {
+const main = (): void => {
   startServer();
 };
 main();

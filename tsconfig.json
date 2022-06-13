@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
     "target": "esnext",
     "sourceMap": false,
     "experimentalDecorators": true,
@@ -18,6 +19,6 @@
   ]
   // "files": [
   //   "src/index.ts",
-  //   "src/js/module.d.ts"
+  //   "src/modules/module.d.ts"
   // ]
 }

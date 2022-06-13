@@ -6,7 +6,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "outDir": "src",
     "downlevelIteration": true,
     "esModuleInterop": true,
     "moduleResolution": "node"
@@ -16,9 +15,8 @@
   ],
   "include": [
     "src/**/*"
+  ],
+  "files": [
+    "src/index.ts"
   ]
-  // "files": [
-  //   "src/index.ts",
-  //   "src/modules/module.d.ts"
-  // ]
 }

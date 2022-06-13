@@ -1,8 +1,6 @@
-import { getUsers } from './scripts/usersDb';
+import { startServer } from './scripts/httpServer/httpServer';
 
 const main = () => {
-  // const users = JSON.parse(usersDbJson);
-  const users = getUsers();
-  console.log('users: ', users);
+  startServer();
 };
 main();

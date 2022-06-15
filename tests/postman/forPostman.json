@@ -1,0 +1,9 @@
+{
+  "username": "Bob1",
+  "age": 27,
+  "hobbies": [
+      "skiing",
+      "chess",
+      "football"
+  ]
+}

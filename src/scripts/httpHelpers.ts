@@ -66,12 +66,6 @@ export const handleHttpErrors = (
       'Record with id === userId does not exist!': 404,
       'You provided an incorrect user object!': 400,
     }
-    // const crashTypes = {
-    //   'No such endpoint!': 404,
-    //   'Invalid UUID': 400,
-    //   'No such user!': 400,
-    //   'You provided an incorrect user object!': 400,
-    // }
     const errMsg = err.message;
     const statusCode: number = crashTypes[errMsg];
     if (statusCode === undefined) {

@@ -7,8 +7,3 @@ export interface IUser {
 
 export type handlerResult = [ number, string ];
 
-export type newUserType = {
-  username: string;
-  age: number;
-  hobbies: Array<string | null>;
-}

@@ -1,5 +1,5 @@
 export interface IReqOptions {
-  type: string;
+  method: string;
   url: string;
   reqObj: object;
 }

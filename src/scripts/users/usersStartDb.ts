@@ -9,7 +9,7 @@ const usersArr: Array<IUser> = [
       'skiing',
       'chess',
       'football'
-    ]
+    ],
   },
   {
     'id': 'c8c53c2a-53c9-452a-b7d0-dd734009ee4d',
@@ -19,7 +19,7 @@ const usersArr: Array<IUser> = [
       'skiing',
       'chess',
       'football'
-    ]
+    ],
   }
 ];
 

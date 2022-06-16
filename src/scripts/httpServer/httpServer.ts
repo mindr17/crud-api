@@ -22,7 +22,7 @@ export const startServer = (): void => {
           res.writeHead(statusCode, { "Content-Type": "application/json" });
           res.end(msg);
         } catch(err) {
-          console.error(err);
+
         }
       } catch(err) {
         try {

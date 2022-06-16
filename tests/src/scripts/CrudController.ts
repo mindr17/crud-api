@@ -11,25 +11,27 @@ class CrudController {
     
   }
 
-  public async get(options) {
+  public async get() {
     // await this.makeRequest(options);
-    const responseObj = await fetch("https://localhost:3030/");
+    const responseObj = await fetch('http://localhost:3030/api/users/');
+    const resJson = await responseObj.json();
   }
 
   public async makeRequest(options: IReqOptions) {
-    const { type, url, reqObj } = options;
-    const responseObj = await fetch("https://localhost:3030/", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(reqObj),
+    const userObj = {
+      "username": "Bob1",
+      "age": 27,
+      "hobbies": [
+          "chess",
+          "football"
+      ]
+    }
+    const response = await fetch('http://localhost:3030/api/users/', {
+      method: 'POST',
+      body: JSON.stringify(userObj)
     });
-    const responseJson = responseObj.json();
-    console.log('responseJson: ', responseJson);
+    const resJson = await response.json();
   }
-
 }
 
 export const crudController = new CrudController();

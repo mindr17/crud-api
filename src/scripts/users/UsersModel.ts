@@ -42,7 +42,6 @@ export class UsersModel {
     const newUser = newUserParam;
     newUser.id = uuidStr;
     this._users.push(newUser);
-    // console.log('newUser: ', newUser);
     return newUser;
   }
 }

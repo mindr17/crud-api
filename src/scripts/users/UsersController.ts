@@ -1,7 +1,6 @@
 import { usersModel, UsersModel } from './UsersModel';
 import { randomUUID } from 'crypto';
 import { IUser } from '../types';
-import { validateUserObj } from '../httpHelpers';
 
 class UsersController {
   private _usersModel: UsersModel;
@@ -26,19 +25,16 @@ class UsersController {
   }
 
   public addNewUser(userObj: IUser): string {
-    validateUserObj(userObj);
     const generatedUuid: string = randomUUID();
     userObj['id'] = generatedUuid;
     this._usersModel.users.push(userObj);
 
     const userFromDbJson: string = this.getSomeUserJson(generatedUuid);
     const userFromDb: IUser = JSON.parse(userFromDbJson);
-    console.log('userFromDb: ', userFromDb);
     return userFromDbJson;
   }
 
   public updateUser(uuid: string, userObj: IUser): string {
-    validateUserObj(userObj);
     const newUser: IUser = this._usersModel.updateUser(uuid, userObj);
     const newUserJson: string = JSON.stringify(newUser);
     return newUserJson;

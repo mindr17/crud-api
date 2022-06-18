@@ -17,7 +17,7 @@ class CrudController {
     const resJson = await responseObj.json();
   }
 
-  public async makeRequest(options: IReqOptions) {
+  public async makeRequest(options: IReqOptions): Promise<string> {
     const userObj = {
       "username": "Bob1",
       "age": 27,
@@ -25,12 +25,14 @@ class CrudController {
           "chess",
           "football"
       ]
-    }
+    };
     const response = await fetch('http://localhost:3030/api/users/', {
       method: 'POST',
       body: JSON.stringify(userObj)
     });
     const resJson = await response.json();
+
+    return resJson;
   }
 }
 

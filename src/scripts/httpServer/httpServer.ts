@@ -3,12 +3,13 @@ import { createServer, IncomingMessage, ServerResponse } from 'http';
 import { checkEndpoint, handleHttpErrors } from '../httpHelpers';
 import { requestRouting } from './handlers/requestRouting';
 
-export const startServer = (): void => {
+export const startServer = (processPid): void => {
   try {
     const server = createServer(async (
       req: IncomingMessage, res: ServerResponse
     ): Promise<void> => {
       try {
+        console.log(`process.pid is ${processPid}`);
         checkEndpoint(req);
   
         const reqMetodUppercased: string = req.method;

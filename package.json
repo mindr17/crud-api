@@ -5,9 +5,11 @@
   "scripts": {
     "start:dev": "npx nodemon ./src/index.ts",
     "start:prod": "rm -rf ./dist/ && npx tsc --rootDir src --outDir dist && node ./dist/index.js",
+    "start:dev-single": "npx nodemon ./src/single.ts",
+    "start:prod-single": "rm -rf ./dist/ && npx tsc --rootDir src --outDir dist && node ./dist/single.js",
     "dev": "npx nodemon ./src/index.ts",
     "build": "rm -rf ./dist/ && npx tsc --rootDir src --outDir dist",
-    "start": "node ./dist/index.js",
+    "start-old": "node ./dist/index.js",
     "lint": "npx eslint src/ --ext ts"
   },
   "dependencies": {

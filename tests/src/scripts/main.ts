@@ -13,6 +13,10 @@ export const main = () => {
   const portText = new Control(crudTop.node, 'div', 'crudtop__text', 'Port:');
   const inputPort = new Control(crudTop.node, 'textarea', 'crudtop__port-input input');
   inputPort.node.value = 3030;
+
+  const reqCountHeader = new Control(crudTop.node, 'div', 'crudtop__text', 'Requests count:');
+  const reqCountText: any = new Control(crudTop.node, 'textarea', 'crudtop__port-input input');
+  reqCountText.node.value = 100;
   
   const crudLeft = new Control(crudTester.node, 'div', 'crud__left');
   const crudRight = new Control(crudTester.node, 'div', 'crud__right');
@@ -22,7 +26,16 @@ export const main = () => {
     crudController.get();
   };
 
-  const postBtn = new Control(crudLeft.node, 'button', 'btn start', 'Add user');
+  // const outputShowText = new Control(crudRight.node, 'div', '', 'Show output?');
+  // const outputShowInput = new Control(crudRight.node, 'input', '');
+
+  const outputTimeWrapper = new Control(crudRight.node, 'div', 'crud__time', 'The request took ');
+  const timeValueElem = new Control(outputTimeWrapper.node, 'div', 'crud__time-value');
+  const outputTimeTextAfterElem = new Control(outputTimeWrapper.node, 'span', '', 'ms to complete');
+  
+  // const outputResElem = new Control(crudRight.node, 'textarea', 'crud__textarea');
+  
+  const postBtn = new Control(crudLeft.node, 'button', 'btn start', 'Add one user');
   postBtn.node.onclick = async () => {
     // const userObj = {
     //   'username': 'Bob',
@@ -40,8 +53,8 @@ export const main = () => {
       "hobbies": [
           "chess",
           "football"
-      ]
-    }
+      ],
+    };
 
     
     const options: IReqOptions = {
@@ -61,13 +74,36 @@ export const main = () => {
     
   };
 
-  const postManyBtn = new Control(crudLeft.node, 'button', 'btn start', 'Add 10,000 users');
+  const postManyBtn = new Control(crudLeft.node, 'button', 'btn start', `Add "requests count" users`);
   postManyBtn.node.onclick = async () => {
+    const userObj = {
+      "username": "Bob1",
+      "age": 27,
+      "hobbies": [
+          "chess",
+          "football"
+      ],
+    };
+
+    const reqOptions: IReqOptions = {
+      method: 'POST',
+      url: 'http://localhost:3030/api/users/',
+      reqObj: userObj,
+    };
     
+    const reqCount = Number(reqCountText.node.value);
+    const dateStart = new Date();
+
+    const promises = [];
+    promises.length = reqCount;
+    for (let i = 0; i < reqCount; i++) {
+      const reqPromise = crudController.makeRequest(reqOptions);
+      promises.push(reqPromise);
+    }
+    await Promise.all(promises);
+
+    const dateEnd = new Date();
+    timeValueElem.node.textContent = `${Number(dateEnd) - Number(dateStart)}`;
+
   };
-  
-
-  const inputElem: any = new Control(crudRight.node, 'textarea', 'crud__textarea').node;
-  
-
-}
+};

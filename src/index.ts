@@ -1,6 +1,6 @@
-import { startServer } from './scripts/httpServer/httpServer';
+import { startCluster } from './scripts/cluster';
 
 const main = (): void => {
-  startServer();
+  startCluster();
 };
 main();

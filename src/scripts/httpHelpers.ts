@@ -5,7 +5,7 @@ import { IUser } from './types';
 export const getUserObj = (body: string): IUser => {
   try {
     const bodyObj = JSON.parse(body);
-    if (Object.keys(bodyObj).length <= 3) {
+    if (Object.keys(bodyObj).length < 3) {
       throw new Error('You provided an incorrect user object!');
     }
     const { username, age, hobbies } = bodyObj;

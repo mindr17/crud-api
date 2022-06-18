@@ -20,7 +20,7 @@ npm run start:prod-single
 ```bash
 code tests/postman/postman-config.json
 ```
-### Testing environment in browser
+### Running tests in browser http://localhost:8080/
 ```bash
 cd tests && npm i && npm run start
 ```

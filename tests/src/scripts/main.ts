@@ -29,7 +29,7 @@ export const main = () => {
   };
   const options: IReqOptions = {
     method: 'POST',
-    url: 'http://localhost:3030/api/users/',
+    url: `http://localhost:${inputPort.node.value}/api/users/`,
     reqObj: USER_OBJECT,
   }
   

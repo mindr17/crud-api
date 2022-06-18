@@ -100,7 +100,7 @@ export const main = () => {
       const reqPromise = crudController.makeRequest(reqOptions);
       promises.push(reqPromise);
     }
-    await Promise.all(promises);
+    const result = await Promise.all(promises);
 
     const dateEnd = new Date();
     timeValueElem.node.textContent = `${Number(dateEnd) - Number(dateStart)}`;

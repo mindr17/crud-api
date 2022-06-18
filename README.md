@@ -1,7 +1,7 @@
 # Nodejs CRUD api
 ### Install
 ```bash
-npm i
+git checkout crud-api && npm i
 ```
 ### Start in development mode
 ```bash
@@ -18,7 +18,7 @@ npm run start:prod-single
 ## Testing
 ### Postman config
 ```bash
-code tests/postman/forPostman.json
+code tests/postman/postman-config.json
 ```
 ### Testing environment in browser
 ```bash

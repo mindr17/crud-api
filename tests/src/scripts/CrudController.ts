@@ -11,9 +11,9 @@ class CrudController {
     
   }
 
-  public async get() {
-    // await this.makeRequest(options);
-    const responseObj = await fetch('http://localhost:3030/api/users/');
+  public async get(options) {
+    const { url } = options;
+    const responseObj = await fetch(url);
     const resJson = await responseObj.json();
   }
 
@@ -26,7 +26,8 @@ class CrudController {
           "football"
       ]
     };
-    const response = await fetch('http://localhost:3030/api/users/', {
+    const { url } = options;
+    const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify(userObj)
     });

@@ -17,9 +17,8 @@ export const startCluster = () => {
       console.log(`worker ${worker.process.pid} died`);
     });
   } else {
-    const processPid = pid;
-    startServer(processPid);
+    startServer();
   
-    console.log(`Worker ${processPid} started`);
+    console.log(`Worker ${pid} started`);
   }
 };

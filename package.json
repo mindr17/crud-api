@@ -5,6 +5,9 @@
   "scripts": {
     "start:dev": "npx nodemon ./src/index.ts",
     "start:prod": "rm -rf ./dist/ && npx tsc --rootDir src --outDir dist && node ./dist/index.js",
+    "test": "npx nodemon ./tests/supertest/test.index.ts",
+    "test2": "npx nodemon ./tests/supertest/test2.index.ts",
+    "test3": "npx nodemon ./tests/supertest/test3.index.ts",
     "start:dev-single": "npx nodemon ./src/single.ts",
     "start:prod-single": "rm -rf ./dist/ && npx tsc --rootDir src --outDir dist && node ./dist/single.js",
     "dev": "npx nodemon ./src/index.ts",
@@ -19,7 +22,11 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.2",
     "@types/node": "^17.0.36",
-    "@types/uuid": "^8.3.4"
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "jest": "^28.1.1",
+    "supertest": "^6.2.3"
   }
 }

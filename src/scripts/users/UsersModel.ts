@@ -1,12 +1,12 @@
 import { IUser } from '../types';
-import { getUsers } from './usersStartDb';
+// import { getUsers } from './usersStartDb';
 
 export class UsersModel {
   private _users: Array<IUser>;
 
   constructor() {
-    // this._users = [];
-    this._users = getUsers();
+    this._users = [];
+    // this._users = getUsers();
   }
 
   public get users(): Array<IUser> {

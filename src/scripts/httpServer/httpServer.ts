@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import 'dotenv/config';
 import { createServer, IncomingMessage, ServerResponse } from 'http';
 import { checkEndpoint, handleHttpErrors } from '../httpHelpers';
 import { requestRouting } from './handlers/requestRouting';
